@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import MainArea from './components/main-area/MainArea';
+import Sidebar from './components/sidebar/Sidebar';
 
-function App() {
+const App = () => {
+  const [shrinkedSidebar, setSidebarSize] = useState(true);
+
+  const toggleSiebar = (event) => {
+    const { checked } = event.target;
+    setSidebarSize(checked);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="h-100 container">
+      <section className={`sidebar-container h-100 ${!shrinkedSidebar && "reduced"}`}>
+        <Sidebar toggleSiebar={toggleSiebar} />
+      </section>
+      <section className="main-container h-100">
+        <MainArea />
+      </section>
+    </main>
   );
 }
 
