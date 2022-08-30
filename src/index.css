@@ -32,6 +32,6 @@ code {
 }
 
 .main-area {
-  height: 100vh;
-  background: #353353;
+  height: 100%;
+  overflow-y: auto;
 }

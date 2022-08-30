@@ -7,9 +7,9 @@ const Sidebar = ({ toggleSiebar }) => {
     const [items, setItems] = useState([
         { name: "Home", icon: faHouse },
         { name: "About", icon: faUser },
-        { name: "Education", icon: faGraduationCap },
         { name: "Projects", icon: faCode },
-        { name: "Experience", icon: faBriefcase }
+        { name: "Experience", icon: faBriefcase },
+        { name: "Education", icon: faGraduationCap }
     ]);
     const [selectedMethod, setSelectedMethod] = useState({});
     const [shrinkedSideBar, setShrinkedSidebar] = useState(true)
@@ -26,7 +26,6 @@ const Sidebar = ({ toggleSiebar }) => {
 
     return (
         <main className={`sidebar ${!shrinkedSideBar && "shrinked"}`}>
-            
             <header className="header ubuntu">
                 {!shrinkedSideBar ? (
                     <span>AH<span className="dot">.</span></span>
@@ -42,8 +41,10 @@ const Sidebar = ({ toggleSiebar }) => {
                             items.map(item => {
                                 return (
                                     <li className={`item ${selectedMethod.name === item.name && "selected"}`} onClick={(e) => setSelectedMethod(item)}>
-                                        <FontAwesomeIcon icon={item.icon} />
-                                        <span className="title">{item.name}</span>
+                                        <button className="transparent-btn">
+                                            <FontAwesomeIcon icon={item.icon} />
+                                            <span className="title">{item.name}</span>
+                                        </button>
                                     </li>
                                 )
                             })

@@ -46,6 +46,9 @@
 
 .items .item {
     list-style-type: none;
+}
+
+.transparent-btn {
     display: flex;
     align-items: center;
     column-gap: 20px;
@@ -55,10 +58,14 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.1s linear;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
 }
 
-.items .item:hover,
-.selected,
+.items .item button:hover,
+.selected button,
 .dot {
     color: #ffd15c;
 }

@@ -1,0 +1,58 @@
+.about {
+    background: #f9f9ff;
+    height: 100%;
+    padding: 20px 10%;
+}
+
+.para-box {
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    box-shadow: 0px 5px 20px 0px rgb(69 67 96 / 10%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    color: #5e5c7f;
+    line-height: 20px;
+    margin: 0 0 50px 0;
+}
+
+.url {
+    color: rgb(231, 60, 60);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.progressbar {
+    height: 8px;
+    border-radius: 15px;
+    background-color: #f1f1f1;
+    position: relative;
+    overflow: hidden;
+}
+
+.progressbar .progress {
+    height: 100%;
+    border-radius: 15px;
+}
+
+.skill {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 20px;
+}
+.wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.wrap small {
+    font-size: 18px;
+}
+
+.wrap h3 {
+    font-weight: 500;
+    font-size: 16px;
+}

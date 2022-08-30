@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     color: #fff;
+    background: #353353;
 }
 
 header img.user-img {
@@ -19,6 +20,7 @@ header img.user-img {
 
 main .name {
     font-size: 40px;
+    text-align: center;
 }
 
 main div {
