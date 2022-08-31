@@ -5,17 +5,17 @@ const About = () => {
     let date = new Date("01-01-2018");
     let dateNow = new Date();
     const skills = [
-        { name: "HTML", efficiency: 9, color: "#ffc107" },
-        { name: "CSS/Bootstrap", efficiency: 9, color: "#dc3545" },
+        { name: "HTML/CSS", efficiency: 9, color: "#ffc107" },
         { name: "Javascript", efficiency: 7, color: "#007bff" },
-        { name: "Typescript", efficiency: 6.5, color: "#0F3460" },
         { name: "Angular", efficiency: 7.5, color: "#E94560" },
         { name: "ReactJS", efficiency: 7.5, color: "#FF7F3F" },
         { name: "NodeJS", efficiency: 7.5, color: "#ffc107" },
         { name: "NestJS", efficiency: 5, color: "#007bff" },
         { name: "Mongo DB", efficiency: 6, color: "#0F3460" },
+        { name: "WebRTC", efficiency: 6, color: "#dc3545" },
         { name: "MySQL", efficiency: 7, color: "#E94560" },
-        { name: "Git", efficiency: 6.2, color: "#FF7F3F" }
+        { name: "Web Sockets", efficiency: 6.5, color: "#dc3545" },
+        { name: "Git/Bitbucket", efficiency: 6.8, color: "#FF7F3F" }
     ]
 
     return (

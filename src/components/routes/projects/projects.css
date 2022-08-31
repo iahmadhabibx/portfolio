@@ -1,0 +1,61 @@
+.projects {
+    background: #f9f9ff;
+    height: 100%;
+    padding: 20px 10%;
+}
+
+.tabs,.cards {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs .tab {
+    list-style-type: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.1s linear;
+    cursor: pointer;
+}
+
+.tabs .tab:hover, .selected {
+    color: #ff4c60;
+}
+
+.cards {
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 30px 0 0 0;
+}
+
+.card {
+    border-radius: 15px;
+    height: 130px;
+    width: 160px;
+    position: relative;
+    box-shadow: 0px 5px 20px 0px rgb(69 67 96 / 10%);
+    transition: all 0.1s ease-in;
+    overflow: hidden;
+}
+
+.card:hover {
+    background-color: rgb(50, 50, 218, 0.7);
+}
+
+.card img {
+    transition: all 0.1s ease-in;
+}
+.card .hover-details {
+    position: absolute;
+    bottom: -100px;
+    color: #fff;
+    transition: bottom 0.2s ease-in;
+}
+.card:hover img {
+    display: none;
+}
+
+.card:hover .hover-details {
+    bottom: 50px;
+}
