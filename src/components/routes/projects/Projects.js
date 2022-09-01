@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
-    const tabs = [
+    const [tabs, setTabs] = useState([
         { name: "All", key: "all", selected: true },
         { name: "Javascript", key: "js", selected: false },
         { name: "Angular", key: "angular", selected: false },
         { name: "ReactJS", key: "react", selected: false },
         { name: "NodeJS", key: "node", selected: false },
         { name: "Full Stack", key: "fullStack", selected: false },
-    ];
+    ]);
     const projects = [
         { key: ["angular", "all"], title: "Currency exchanger", url: "https://maptracker-54ca5.web.app/" },
         { key: ["angular", "all"], title: "Ticket booking platform", url: "https://fansafe-ac5e8.firebaseapp.com/tickets" },
@@ -33,6 +33,17 @@ const Projects = () => {
         filterProjects(0);
     }, []);
 
+    const onChangeTab = (tab) => {
+        const TABS = [...tabs];
+        TABS.forEach(_tab => {
+            if (_tab.key === tab.key)
+                tab.selected = true;
+            else
+                tab.selected = false;
+        });
+        setTabs(TABS);
+    }
+
     const filterProjects = (index) => {
         const currentTab = tabs[index];
         let _projects = projects.slice().filter(proj => proj.key.includes(currentTab.key));
@@ -50,7 +61,7 @@ const Projects = () => {
                             React.Children.toArray(
                                 tabs.map(tab => {
                                     return (
-                                        <li className={`tab ${tab.selected && "selected"}`}>
+                                        <li className={`tab ${tab.selected && "selected"}`} onClick={() => onChangeTab(tab)}>
                                             {tab.name}
                                         </li>
                                     )
