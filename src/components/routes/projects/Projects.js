@@ -30,22 +30,24 @@ const Projects = () => {
     const [projectsToShow, setProjectsToShow] = useState([]);
 
     useEffect(() => {
-        filterProjects(0);
+        filterProjects('all');
     }, []);
 
     const onChangeTab = (tab) => {
         const TABS = [...tabs];
         TABS.forEach(_tab => {
-            if (_tab.key === tab.key)
-                tab.selected = true;
+            if (_tab.key === tab.key) {
+                _tab.selected = true;
+            }
             else
-                tab.selected = false;
+                _tab.selected = false;
         });
+        filterProjects(tab.key)
         setTabs(TABS);
     }
 
-    const filterProjects = (index) => {
-        const currentTab = tabs[index];
+    const filterProjects = (key) => {
+        const currentTab = tabs.find(tab => tab.key === key);
         let _projects = projects.slice().filter(proj => proj.key.includes(currentTab.key));
         setProjectsToShow(_projects);
     }

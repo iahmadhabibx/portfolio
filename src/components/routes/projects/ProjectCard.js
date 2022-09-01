@@ -34,9 +34,9 @@ const ProjectCard = ({ project }) => {
 
     function checkIframeLoaded() {
         var iframe = document.getElementById('iframe');
-        var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        var iframeDoc = iframe?.contentDocument || iframe?.contentWindow.document;
 
-        if (iframeDoc.readyState == 'complete') {
+        if (iframeDoc?.readyState == 'complete') {
             document.querySelector(".dots").classList.add("d-none");
             clearTimeout(timeout)
             return;
@@ -67,7 +67,7 @@ const ProjectCard = ({ project }) => {
                     contentLabel="Selected Option"
                 >
                     <React.Fragment>
-                        <div class="dots"></div>
+                        <div className="dots"></div>
                         {
                             project.url ? (
                                 <iframe id="iframe" src={project.url} className="iframe" frameBorder="0"></iframe>
