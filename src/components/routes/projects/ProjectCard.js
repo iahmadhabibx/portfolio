@@ -60,7 +60,6 @@ const ProjectCard = ({ project }) => {
 
                 <Modal
                     isOpen={openModal}
-                    // onAfterOpen={afterOpenModal}
                     onRequestClose={modalToggle}
                     style={customStyles}
                     ariaHideApp={false}
