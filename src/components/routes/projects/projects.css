@@ -102,7 +102,7 @@
 }
 
 .arrows-container {
-    display: inline-flex;
+    display: none;
     justify-content: space-between;
 }
 .arrow {
@@ -141,5 +141,8 @@
 
     .card .hover-details .title {
         visibility: hidden;
+    }
+    .arrows-container {
+        display: inline-flex;
     }
 }

@@ -31,6 +31,7 @@ const Experience = () => {
 
     return (
         <section className="experience">
+             <h3 className="title ubuntu">My Experience</h3>
             {
                 React.Children.toArray(
                     experience.map(exp => {
