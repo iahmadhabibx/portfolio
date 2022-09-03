@@ -21,7 +21,7 @@ const Home = () => {
     }, [])
 
     return (
-        <section className="home h-100">
+        <section className="home h-100" id="home">
             <header>
                 <img className="user-img" src="https://avatars.githubusercontent.com/u/49106201?v=4" alt="Ahmad Habib" />
             </header>

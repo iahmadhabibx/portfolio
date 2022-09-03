@@ -1,15 +1,15 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faHouse, faGraduationCap, faBriefcase, faUser } from "@fortawesome/free-solid-svg-icons";
 import './sidebar.css';
 
 const Sidebar = ({ toggleSiebar }) => {
     const [items, setItems] = useState([
-        { name: "Home", icon: faHouse },
-        { name: "About", icon: faUser },
-        { name: "Projects", icon: faCode },
-        { name: "Experience", icon: faBriefcase },
-        { name: "Education", icon: faGraduationCap }
+        { name: "Home", icon: faHouse, id: "home" },
+        { name: "About", icon: faUser, id: "about" },
+        { name: "Projects", icon: faCode, id: "projects" },
+        { name: "Experience", icon: faBriefcase, id: "experience" },
+        { name: "Education", icon: faGraduationCap, id: "education" }
     ]);
 
     const [selectedMethod, setSelectedMethod] = useState({});
@@ -40,6 +40,10 @@ const Sidebar = ({ toggleSiebar }) => {
         setShrinkedSidebar(checked);
     }
 
+    const goToSection = (item) => {
+        window.location.replace(`/#${item.id}`)
+    };
+
     return (
         <main className={`sidebar ${!shrinkedSideBar && "shrinked"}`}>
             <header className="header ubuntu">
@@ -57,7 +61,7 @@ const Sidebar = ({ toggleSiebar }) => {
                             items.map(item => {
                                 return (
                                     <li className={`item ${selectedMethod.name === item.name && "selected"}`} onClick={(e) => setSelectedMethod(item)}>
-                                        <button className="transparent-btn">
+                                        <button className="transparent-btn" onClick={()=>goToSection(item)}>
                                             <FontAwesomeIcon icon={item.icon} />
                                             <span className="title">{item.name}</span>
                                         </button>

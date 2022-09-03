@@ -1,10 +1,9 @@
+import React from "react";
 import "./experience.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
 
 const Experience = () => {
-    let date = new Date();
     const experience = [
         { role: "Junior Software Engineer", company: "Amigo Software", start: "Dec, 2019", end: "Aug, 2021", isPresent: false, description: [
             "Working in the capacity of Full stack developer",
@@ -30,7 +29,7 @@ const Experience = () => {
     ]
 
     return (
-        <section className="experience">
+        <section className="experience" id="experience">
              <h3 className="title ubuntu">My Experience</h3>
             {
                 React.Children.toArray(

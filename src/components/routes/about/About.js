@@ -19,7 +19,7 @@ const About = () => {
     ]
 
     return (
-        <section className="about">
+        <section className="about" id="about">
             <h3 className="title ubuntu">About Me</h3>
             <aside>
                 <div className="para-box">

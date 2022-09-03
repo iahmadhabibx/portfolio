@@ -64,7 +64,7 @@ const Projects = () => {
     }
 
     return (
-        <section className="projects">
+        <section className="projects" id="projects">
             <h3 className="title ubuntu">My Projects</h3>
 
             <aside>
