@@ -23,7 +23,7 @@ const Home = () => {
             </header>
             <main>
                 <h2 className="ubuntu name">Ahmad Habib</h2>
-                <div className="w-100">I am <span className="experties" id="experties"></span></div>
+                <div className="w-100 experties-div">I am <span className="experties" id="experties"></span></div>
             </main>
             <aside className="footer">
                 <section className="social-icons w-100">

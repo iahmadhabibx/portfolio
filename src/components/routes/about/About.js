@@ -24,7 +24,7 @@ const About = () => {
             <aside>
                 <div className="para-box">
                     I am Ahmad Habib, a full stack developer with a growing passion of learning and I have
-                    <span className="experience"> {Number(dateNow.getFullYear()) - Number(date.getFullYear())} years </span>
+                    <span className="my-experience"> {Number(dateNow.getFullYear()) - Number(date.getFullYear())} years </span>
                     of working experience. I have done my graduation from <a href="https://gcu.edu.pk/" className="url" target="_blank">GC University, Lahore</a> .
                     Apart from my working, I also like to play cricket, football, badminton, table tennis and snooker.
                 </div>

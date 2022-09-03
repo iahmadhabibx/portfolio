@@ -17,22 +17,24 @@ const Experience = () => {
                     experience.map(exp => {
                         return (
                             <main className="exp">
-                                <FontAwesomeIcon icon={faBriefcase} />
-                                <div className="text">
-                                    <div className="job-title">{exp.role}</div>
-                                    <div className="job-duration">
-                                        {exp.isPresent && (
-                                            <React.Fragment>
-                                                <div>{exp.start} - Present</div>
-                                            </React.Fragment>
-                                        )}
-                                        {!exp.isPresent && (
-                                            <React.Fragment>
-                                                <div>{exp.start} - {exp.end}</div>
-                                            </React.Fragment>
-                                        )}
-                                    </div>
-                                    <div className="job-company">
+                                <FontAwesomeIcon icon={faBriefcase} className="job-icon" />
+                                <div className="job-details w-100">
+                                    <span className="header-detail">
+                                        <div className="job-title ubuntu">{exp.role}</div>
+                                        <div className="job-duration ubuntu">
+                                            {exp.isPresent && (
+                                                <React.Fragment>
+                                                    <div>{exp.start} - Present</div>
+                                                </React.Fragment>
+                                            )}
+                                            {!exp.isPresent && (
+                                                <React.Fragment>
+                                                    <div>{exp.start} - {exp.end}</div>
+                                                </React.Fragment>
+                                            )}
+                                        </div>
+                                    </span>
+                                    <div className="job-company ubuntu">
                                         {exp.company}
                                     </div>
                                 </div>

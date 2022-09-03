@@ -38,11 +38,11 @@ const ProjectCard = ({ project }) => {
 
         if (iframeDoc?.readyState == 'complete') {
             document.querySelector(".dots").classList.add("d-none");
-            clearTimeout(timeout)
+            timeout && clearTimeout(timeout);
             return;
         }
 
-        let timeout = window.setTimeout(checkIframeLoaded, 100);
+        var timeout = window.setTimeout(checkIframeLoaded, 100);
     }
 
 
