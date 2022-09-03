@@ -1,6 +1,9 @@
 import "./projects.css";
 import React, { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
     const [tabs, setTabs] = useState([
@@ -27,11 +30,19 @@ const Projects = () => {
         { key: ["angular", "node", "fullStack", "all"], title: "Learning Management System", url: "https://web.rainbow-classroom.com" },
         { key: ["node", "all"], title: "NodeJS based zoom clone", url: "https://blooming-forest-80223.herokuapp.com" },
     ];
+
     const [projectsToShow, setProjectsToShow] = useState([]);
 
     useEffect(() => {
         filterProjects('all');
     }, []);
+
+    const scrollTabs = (type) => {
+        if (type === 'r')
+            document.querySelector('.tabs').scrollLeft += 20;
+        else
+            document.querySelector('.tabs').scrollLeft -= 20;
+    }
 
     const onChangeTab = (tab) => {
         const TABS = [...tabs];
@@ -54,10 +65,14 @@ const Projects = () => {
 
     return (
         <section className="projects">
-            <h3 className="title ubuntu">About Me</h3>
+            <h3 className="title ubuntu">My Projects</h3>
 
             <aside>
                 <section className="tabs-container">
+                    <div className="arrows-container w-100">
+                        <FontAwesomeIcon icon={faAngleLeft} className="arrow arrow-left" onClick={()=>scrollTabs('l')} />
+                        <FontAwesomeIcon icon={faAngleRight} className="arrow arrow-right" onClick={()=>scrollTabs('r')} />
+                    </div>
                     <ul className="tabs">
                         {
                             React.Children.toArray(

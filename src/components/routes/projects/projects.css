@@ -2,7 +2,10 @@
     background: #f9f9ff;
     padding: 20px 10%;
 }
-
+.tabs {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
 .tabs,.cards {
     display: flex;
     margin: 0;
@@ -98,6 +101,20 @@
     color: #ffd15c;
 }
 
+.arrows-container {
+    display: inline-flex;
+    justify-content: space-between;
+}
+.arrow {
+    cursor: pointer;
+    color: #4d4d4d;
+    padding: 6px;
+}
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.0786);
+    border-radius: 4px;
+}
+
 .dots {
     position: absolute;
     left: 50%;
@@ -108,5 +125,21 @@
     background: radial-gradient(circle closest-side,#000 90%,#0000) 0/calc(100%/3) 100% space;
     clip-path: inset(0 100% 0 0);
     animation: d1 1s steps(4) infinite;
-  }
-  @keyframes d1 {to{clip-path: inset(0 -34% 0 0)}}
+}
+@keyframes d1 {to{clip-path: inset(0 -34% 0 0)}}
+
+@media(max-width: 500px) {
+    .tabs .tab {
+        margin: 0 20px 0 0;
+        font-size: 13px;
+    }
+
+    .card {
+        height: 70px;
+        width: 90px;
+    }
+
+    .card .hover-details .title {
+        visibility: hidden;
+    }
+}

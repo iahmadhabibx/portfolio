@@ -8,7 +8,11 @@
 }
 
 .main-container {
-    width: 100%;
+    width: calc(100% - 250px);
+}
+
+.main-container.reduced {
+    width: calc(100% - 80px);
 }
 
 .container {

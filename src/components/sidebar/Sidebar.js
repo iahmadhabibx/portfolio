@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faHouse, faGraduationCap, faBriefcase, faUser } from "@fortawesome/free-solid-svg-icons";
 import './sidebar.css';
@@ -11,16 +11,32 @@ const Sidebar = ({ toggleSiebar }) => {
         { name: "Experience", icon: faBriefcase },
         { name: "Education", icon: faGraduationCap }
     ]);
+
     const [selectedMethod, setSelectedMethod] = useState({});
-    const [shrinkedSideBar, setShrinkedSidebar] = useState(true)
+    const [shrinkedSideBar, setShrinkedSidebar] = useState(true);
+    const [isToggleButtonDisabled, setToggleButtonDisable] = useState(false);
 
     useEffect(() => {
         setSelectedMethod(items[0]);
+        const updateSize = () => {
+            if (window.innerWidth < 768) {
+                setShrinkedSidebar(false);
+                setToggleButtonDisable(true);
+                toggleSiebar(false);
+            } else {
+                setToggleButtonDisable(false);
+                setShrinkedSidebar(true);
+                toggleSiebar(true);
+            }
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
     }, [items]);
 
     const onToggleSidebar = (event) => {
         const { checked } = event.target;
-        toggleSiebar(event);
+        toggleSiebar(checked);
         setShrinkedSidebar(checked);
     }
 
@@ -53,9 +69,11 @@ const Sidebar = ({ toggleSiebar }) => {
                 </ul>
             </section>
 
-            <footer>
-                <input type="checkbox" id="switch" onChange={onToggleSidebar} checked={shrinkedSideBar} /><label htmlFor="switch">Toggle Sidebar</label>
-            </footer>
+            {!isToggleButtonDisabled && (
+                <footer>
+                    <input type="checkbox" id="switch" onChange={onToggleSidebar} checked={shrinkedSideBar} /><label htmlFor="switch">Toggle Sidebar</label>
+                </footer>
+            )}
         </main>
     )
 }

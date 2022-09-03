@@ -3,10 +3,14 @@ import "./home.css"
 import Typewriter from 'typewriter-effect/dist/core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
+import ResumeFile from "../../../assets/Ahmad_Habib.pdf";
 
 const Home = () => {
     const expertiesList = ["Full stack developer", "Javascript developer", "MEAN stack developer", "MERN stack developer", "NodeJS/ExpressJS developer", "NestJS developer"]
-    const socialIcons = [faGithub, faLinkedin, faStackOverflow];
+    const socialIcons = [
+        { icon: faGithub, link:'https://github.com/iahmadhabibx'},
+        { icon: faLinkedin, link:'https://www.linkedin.com/in/iahmadhabibx/'},
+        { icon: faStackOverflow, link:'https://stackoverflow.com/users/12515963/ahmad-habib'}];
 
     useEffect(() => {
         new Typewriter('#experties', {
@@ -28,14 +32,14 @@ const Home = () => {
             <aside className="footer">
                 <section className="social-icons w-100">
                     {React.Children.toArray(
-                        socialIcons.map(icon => {
+                        socialIcons.map(sicon => {
                             return (
-                                <FontAwesomeIcon icon={icon} />
+                                <a href={sicon.link} target="_blank" ><FontAwesomeIcon icon={sicon.icon} /></a>
                             )
                         })
                     )}
                 </section>
-                <button className="resume-btn ubutnu">Download resume</button>
+                    <a className="resume-btn ubutnu" href={ResumeFile} download="Ahmad_Habib">Download resume</a>
             </aside>
         </section>
     )

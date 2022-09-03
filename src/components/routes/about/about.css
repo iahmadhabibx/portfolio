@@ -56,3 +56,22 @@
     font-weight: 500;
     font-size: 16px;
 }
+
+/* Responsive */
+@media(max-width: 500px) {
+    .para-box {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        font-size: 13px;
+    }
+
+    .skill {
+        width: 100%;
+    }
+}
+@media(max-width: 400px) {
+    .para-box {
+        padding: 10px;
+    }
+}

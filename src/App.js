@@ -6,8 +6,7 @@ import Sidebar from './components/sidebar/Sidebar';
 const App = () => {
   const [shrinkedSidebar, setSidebarSize] = useState(true);
 
-  const toggleSiebar = (event) => {
-    const { checked } = event.target;
+  const toggleSiebar = (checked) => {
     setSidebarSize(checked);
   }
 
@@ -16,7 +15,7 @@ const App = () => {
       <section className={`sidebar-container h-100 ${!shrinkedSidebar && "reduced"}`}>
         <Sidebar toggleSiebar={toggleSiebar} />
       </section>
-      <section className={`main-container h-100`}>
+      <section className={`main-container ${!shrinkedSidebar && "reduced"} h-100`}>
         <MainArea />
       </section>
     </main>
