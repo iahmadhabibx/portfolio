@@ -40,10 +40,6 @@ const Sidebar = ({ toggleSiebar }) => {
         setShrinkedSidebar(checked);
     }
 
-    const goToSection = (item) => {
-        window.location.replace(`/#${item.id}`)
-    };
-
     return (
         <main className={`sidebar ${!shrinkedSideBar && "shrinked"}`}>
             <header className="header ubuntu">
@@ -61,10 +57,10 @@ const Sidebar = ({ toggleSiebar }) => {
                             items.map(item => {
                                 return (
                                     <li className={`item ${selectedMethod.name === item.name && "selected"}`} onClick={(e) => setSelectedMethod(item)}>
-                                        <button className="transparent-btn" onClick={()=>goToSection(item)}>
+                                        <a href={`#${item.id}`} className="transparent-btn">
                                             <FontAwesomeIcon icon={item.icon} />
                                             <span className="title">{item.name}</span>
-                                        </button>
+                                        </a>
                                     </li>
                                 )
                             })

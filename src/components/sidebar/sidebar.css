@@ -64,8 +64,12 @@
     color: #fff;
 }
 
-.items .item button:hover,
-.selected button,
+.items .item a {
+    text-decoration: none;
+}
+
+.items .item a:hover,
+.selected a,
 .dot {
     color: #ffd15c;
 }
