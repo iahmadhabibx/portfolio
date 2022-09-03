@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faKeyboard } from "@fortawesome/free-regular-svg-icons";
-import './education.css';
+import '../experience/experience.css';
 
 const Education = () => {
     const experience = [
