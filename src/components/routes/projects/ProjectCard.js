@@ -77,6 +77,7 @@ const ProjectCard = ({ project }) => {
                             ) : (
                                 <div className="no-content">
                                     <FontAwesomeIcon icon={faDigging} className="img" />
+                                    <span className="mobile-name ubuntu">{project.title}</span>
                                     <p>Following content has no public URL yet. It will be updated in some time. But you can check my <a className="url" href="https://github.com/iahmadhabibx">Github</a></p>
                                 </div>
                             )
