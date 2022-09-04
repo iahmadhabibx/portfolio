@@ -107,6 +107,7 @@
     justify-content: center;    
     flex-direction: column;
     text-align: center;
+    z-index: 101;
 }
 
 .project-wrapper {
