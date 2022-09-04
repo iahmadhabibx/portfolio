@@ -33,8 +33,8 @@ const ProjectCard = ({ project }) => {
     };
 
     function checkIframeLoaded() {
-        var iframe = document.getElementById('iframe');
-        var iframeDoc = iframe?.contentDocument || iframe?.contentWindow.document;
+        let iframe = document.getElementById('iframe');
+        let iframeDoc = iframe?.contentDocument || iframe?.contentWindow.document;
 
         if (iframeDoc?.readyState == 'complete') {
             document.querySelector(".dots").classList.add("d-none");
@@ -42,22 +42,23 @@ const ProjectCard = ({ project }) => {
             return;
         }
 
-        var timeout = window.setTimeout(checkIframeLoaded, 100);
+        let timeout = window.setTimeout(checkIframeLoaded, 100);
     }
 
 
     return (
-        <div className="card">
-            <img className="w-100" src={svgs[Math.floor(Math.random() * 6)]} alt={project.title} />
-            <section className="hover-details w-100">
-                <div className="title ubuntu">{project.title}</div>
-                <button className="details-btn" onClick={() => {
-                    modalToggle();
-                    checkIframeLoaded();
-                }}>
-                    <FontAwesomeIcon icon={faInfo} />
-                </button>
-
+        <React.Fragment>
+            <div className="card">
+                <img className="w-100" src={svgs[Math.floor(Math.random() * 6)]} alt={project.title} />
+                <section className="hover-details w-100">
+                    <div className="title ubuntu">{project.title}</div>
+                    <button className="details-btn" onClick={() => {
+                        modalToggle();
+                        checkIframeLoaded();
+                    }}>
+                        <FontAwesomeIcon icon={faInfo} />
+                    </button>
+                </section>
                 <Modal
                     isOpen={openModal}
                     onRequestClose={modalToggle}
@@ -69,7 +70,10 @@ const ProjectCard = ({ project }) => {
                         <div className="dots"></div>
                         {
                             project.url ? (
-                                <iframe id="iframe" src={project.url} className="iframe" frameBorder="0"></iframe>
+                                <section className="iframe-content">
+                                    <span className="mobile-name ubuntu">{project.title}</span>
+                                    <iframe id="iframe" src={project.url} className="iframe" frameBorder="0"></iframe>
+                                </section>
                             ) : (
                                 <div className="no-content">
                                     <FontAwesomeIcon icon={faDigging} className="img" />
@@ -79,8 +83,9 @@ const ProjectCard = ({ project }) => {
                         }
                     </React.Fragment>
                 </Modal>
-            </section>
-        </div>
+            </div>
+
+        </React.Fragment>
     )
 };
 
