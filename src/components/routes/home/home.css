@@ -14,7 +14,7 @@ header img.user-img {
 }
 
 .footer {
-    margin: 40px 0 0 0;
+    margin: 20px 0 0 0;
     text-align: center;
 }
 
@@ -61,6 +61,21 @@ main .experties-div {
     position: relative;
     top: 30px;
     text-decoration: none;
+}
+
+.fiverr-section {
+    display: block;
+    margin: 20px 0;
+}
+
+.fiverr-section div, .fiverr-section a {
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.2s linear;
+}
+
+.fiverr-section a:hover {
+    transform: scale(1.1);
 }
 
 .resume-btn:hover {

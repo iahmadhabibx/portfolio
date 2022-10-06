@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
-import "./home.css"
 import Typewriter from 'typewriter-effect/dist/core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
 import ResumeFile from "../../../assets/Ahmad_Habib.pdf";
+import fiverrIcon from "../../../assets/fiverr.png";
+import "./home.css";
 
 const Home = () => {
     const expertiesList = ["Full stack developer", "Javascript developer", "MEAN stack developer", "MERN stack developer", "NodeJS/ExpressJS developer", "NestJS developer"]
     const socialIcons = [
-        { icon: faGithub, link:'https://github.com/iahmadhabibx'},
-        { icon: faLinkedin, link:'https://www.linkedin.com/in/iahmadhabibx/'},
-        { icon: faStackOverflow, link:'https://stackoverflow.com/users/12515963/ahmad-habib'}];
+        { icon: faGithub, link: 'https://github.com/iahmadhabibx' },
+        { icon: faLinkedin, link: 'https://www.linkedin.com/in/iahmadhabibx/' },
+        { icon: faStackOverflow, link: 'https://stackoverflow.com/users/12515963/ahmad-habib' }];
 
     useEffect(() => {
         new Typewriter('#experties', {
@@ -39,7 +40,13 @@ const Home = () => {
                         })
                     )}
                 </section>
-                    <a className="resume-btn ubutnu" href={ResumeFile} download="Ahmad_Habib">Download resume</a>
+                <section className="fiverr-section ubuntu">
+                    <div>Or Hire me on</div>
+                     <a href="https://www.fiverr.com/iahmadhabibx" target="_blank" title="Don't just hover it, Click it">
+                        <img src={fiverrIcon} alt="Fiverr Logo" />
+                    </a>
+                </section>
+                <a className="resume-btn ubutnu" href={ResumeFile} download="Ahmad_Habib">Download resume</a>
             </aside>
         </section>
     )
